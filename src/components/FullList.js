@@ -14,7 +14,7 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
           setAllSongs(result);
         })
           .catch(error => console.error("Fetch error:", error));
-    },[numSongs])
+    },[numSongs, setAllSongs])
 
   async function deleteSong(i){
     await fetch(`http://localhost:5000/${instrumentSongs[i]._id}`,{
