@@ -6,7 +6,7 @@ import FullList from './components/FullList';
 export default function App(){  
   const [display, setDisplay] = useState(false)
   const [numSongs, setNumSongs] = useState(0)
-  const [allSongs,updateAllSongs] = useState([])
+  const [allSongs,setAllSongs] = useState([])
   const [instrument, setInstrument] = useState('guitar')
   const [username, setUsername] = useState(localStorage.getItem('songpicker') || '');
   const [newUser, setNewUser] = useState('')
@@ -71,9 +71,9 @@ export default function App(){
   return(
    loggedIn ? (<>
       <CurrentSong allSongs = {allSongs} instrument={instrument} />
-      <AddSong setDisplay={setDisplay} updateAllSongs = {updateAllSongs} setNumSongs = {setNumSongs} instrument = {instrument}/>
+      <AddSong setDisplay={setDisplay} setAllSongs = {setAllSongs} setNumSongs = {setNumSongs} instrument = {instrument}/>
       <button id ="logout" onClick = {()=>{localStorage.removeItem('songpicker'); setLoggedIn(false)}}>Log Out</button>
-      <FullList allSongs = {allSongs} updateAllSongs = {updateAllSongs} display = {display} setDisplay={setDisplay} numSongs = {numSongs} setNumSongs = {setNumSongs} instrument={instrument} changeInstrument={changeInstrument}/>
+      <FullList allSongs = {allSongs} setAllSongs = {setAllSongs} display = {display} setDisplay={setDisplay} numSongs = {numSongs} setNumSongs = {setNumSongs} instrument={instrument} changeInstrument={changeInstrument}/>
     </>):
   
     (<>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export default function FullList({allSongs, updateAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
+export default function FullList({allSongs, setAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
     useEffect(()=>{
     fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
       .then(response=>{
@@ -11,7 +11,7 @@ export default function FullList({allSongs, updateAllSongs, display, setDisplay,
           return response.json()
       })
         .then(result => {
-          updateAllSongs(result);
+          setAllSongs(result);
         })
           .catch(error => console.error("Fetch error:", error));
     },[numSongs])
