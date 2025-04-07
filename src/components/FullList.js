@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 export default function FullList({allSongs, setAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
     useEffect(()=>{
-    fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
+    fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
       .then(response=>{
         if(!response.ok){
           window.alert(`An error occurred: ${response.statusText}`)
@@ -17,7 +17,7 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
     },[numSongs, setAllSongs])
 
   async function deleteSong(i){
-    await fetch(`http://localhost:5000/${instrumentSongs[i]._id}`,{
+    await fetch(`https://songpicker-server.onrender.com/record/${instrumentSongs[i]._id}`,{
     method:"DELETE"
   })
     setNumSongs(prev=>prev - 1) 

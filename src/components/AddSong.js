@@ -16,7 +16,7 @@ export default function AddSong({setNumSongs, setDisplay, instrument}){
       count:0,
       owner: localStorage.getItem('songpicker')
     };
-    await fetch(`http://localhost:5000/record/add`, {
+    await fetch(`https://songpicker-server.onrender.com/record/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

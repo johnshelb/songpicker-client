@@ -13,7 +13,7 @@ export default function CurrentSong({allSongs, instrument}){
       let index = Math.floor(Math.random() * eligibleSongs.length)
       let ti = eligibleSongs[index].name +" (" + (eligibleSongs[index].count + 1) +")"
       eligibleSongs[index].count+=1;
-      fetch(`http://localhost:5000/update/${eligibleSongs[index]._id}`,{
+      fetch(`https://songpicker-server.onrender.com/record/update/${eligibleSongs[index]._id}`,{
         method:'POST',
         body:JSON.stringify(eligibleSongs[index]),
         headers: {
@@ -24,7 +24,7 @@ export default function CurrentSong({allSongs, instrument}){
     }else{
       for(let song in instrumentSongs){
         instrumentSongs[song].count = 0
-        await fetch(`http://localhost:5000/update/${instrumentSongs[song]._id}`,{
+        await fetch(`https://songpicker-server.onrender.com/record/update/${instrumentSongs[song]._id}`,{
           method:'POST',
           body:JSON.stringify(instrumentSongs[song]),
           headers: {

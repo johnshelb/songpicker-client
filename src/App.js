@@ -23,7 +23,7 @@ export default function App(){
   function logIn(e){
     e.preventDefault();
     console.log('logging in')
-    fetch(`http://localhost:5000/logIn?username=${username}`)
+    fetch(`https://songpicker-server.onrender.com/record/logIn?username=${username}`)
     .then(response => {
       if (response.ok) {
         // response.json()
@@ -38,7 +38,7 @@ export default function App(){
 
   async function signUp(e){
     e.preventDefault();
-    await fetch(`http://localhost:5000/signUp`,
+    await fetch(`https://songpicker-server.onrender.com/record/signUp`,
     {
         method:'POST',
         body: JSON.stringify({username: newUser}),
