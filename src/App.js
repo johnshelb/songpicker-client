@@ -54,8 +54,6 @@ export default function App(){
         localStorage.setItem('songpicker', newUser);
         setLoggedIn(true);
       } else {
-        // response.json()
-        // .then(data=>console.log(data.message))
         alert('Sign up failed: username already exists');
       }
     }
