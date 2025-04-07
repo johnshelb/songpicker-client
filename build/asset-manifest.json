@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.22d772cd.css",
-    "main.js": "/static/js/main.e52f33ce.js",
+    "main.js": "/static/js/main.2d3c5750.js",
     "static/media/guitar photo.jpg": "/static/media/guitar photo.9f7bc49891da810a37ff.jpg",
     "static/media/guitar.jpg": "/static/media/guitar.402e6ccc0c2bd10fefcb.jpg",
     "static/media/james_cotton.jpg": "/static/media/james_cotton.b66ae279d4f2a84e3cd6.jpg",
     "index.html": "/index.html",
     "main.22d772cd.css.map": "/static/css/main.22d772cd.css.map",
-    "main.e52f33ce.js.map": "/static/js/main.e52f33ce.js.map"
+    "main.2d3c5750.js.map": "/static/js/main.2d3c5750.js.map"
   },
   "entrypoints": [
     "static/css/main.22d772cd.css",
-    "static/js/main.e52f33ce.js"
+    "static/js/main.2d3c5750.js"
   ]
 }

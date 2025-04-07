@@ -31,6 +31,8 @@ export default function App(){
         localStorage.setItem('songpicker', username);
         setLoggedIn(true);
       } else {
+         response.json()
+        .then(data=>alert(data.message))
         alert('Log in failed: username does not exist');
       }
     }
