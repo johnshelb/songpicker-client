@@ -22,7 +22,7 @@ export default function App(){
   }
   function logIn(e){
     e.preventDefault();
-    fetch(`https://songpicker-server.onrender.com/record/logIn?username=${username}`)
+    fetch(`https://songpicker-server.onrender.com/logIn?username=${username}`)
     .then(response => {
       if (response.ok) {
         // response.json()
@@ -39,7 +39,7 @@ export default function App(){
 
   async function signUp(e){
     e.preventDefault();
-    await fetch(`https://songpicker-server.onrender.com/record/signUp`,
+    await fetch(`https://songpicker-server.onrender.com/signUp`,
     {
         method:'POST',
         body: JSON.stringify({username: newUser}),
