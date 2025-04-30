@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 export default function FullList({allSongs, setAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
     useEffect(()=>{
       console.log("Fetching all songs")
-    // fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
-    fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
+     fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
+    //fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
       .then(response=>{
         if(!response.ok){
           window.alert(`An error occurred: ${response.statusText}`)
