@@ -21,6 +21,8 @@
 }
 #fullList{
   text-align: left;
+  height: 10em;
+  overflow:auto;
   color:black;
   font-size: .7em;
   position:absolute;

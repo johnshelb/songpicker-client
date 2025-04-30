@@ -4,6 +4,7 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
     useEffect(()=>{
       console.log("Fetching all songs")
      fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
+     //USE FOR TESTING ON LOCALHOST
     //fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
       .then(response=>{
         if(!response.ok){
