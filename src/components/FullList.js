@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 
 export default function FullList({allSongs, setAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
     useEffect(()=>{
-    fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
+      console.log("Fetching all songs")
+    // fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
+    fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
       .then(response=>{
         if(!response.ok){
           window.alert(`An error occurred: ${response.statusText}`)
@@ -23,7 +25,6 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
     setNumSongs(prev=>prev - 1) 
     setDisplay(true)
   }
-  
   const instrumentSongs = allSongs.filter(song=>song.instrument === instrument)
 
   

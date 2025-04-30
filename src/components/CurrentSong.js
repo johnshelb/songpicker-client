@@ -13,6 +13,7 @@ export default function CurrentSong({allSongs, instrument}){
       let index = Math.floor(Math.random() * eligibleSongs.length)
       let ti = eligibleSongs[index].name +" (" + (eligibleSongs[index].count + 1) +")"
       eligibleSongs[index].count+=1;
+      console.log("about to fetch")
       fetch(`https://songpicker-server.onrender.com/record/update/${eligibleSongs[index]._id}`,{
         method:'POST',
         body:JSON.stringify(eligibleSongs[index]),

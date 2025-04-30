@@ -25,8 +25,6 @@ export default function App(){
     fetch(`https://songpicker-server.onrender.com/logIn?username=${username}`)
     .then(response => {
       if (response.ok) {
-        // response.json()
-        // .then(data=>alert(data.message))
         localStorage.setItem('songpicker', username);
         setLoggedIn(true);
       } else {
@@ -57,7 +55,6 @@ export default function App(){
       } else {
         response.json()
         .then(data=>alert(data.message))
-        // alert('Sign up failed: username already exists');
       }
     }
   )}
