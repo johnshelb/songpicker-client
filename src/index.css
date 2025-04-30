@@ -142,7 +142,7 @@ ul{
 }
 .addSong{
   position:absolute;
-  bottom:0rem;
+  bottom:5rem;
   width:100%;
   z-index: 2;
 }
@@ -200,7 +200,7 @@ ul{
   }
   .addSong{
     width:100%;
-    bottom:0;
+    bottom:-2rem;
     right:0;
   }
   #addInput, .addButton{
