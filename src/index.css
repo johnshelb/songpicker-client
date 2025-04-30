@@ -142,7 +142,7 @@ ul{
 }
 .addSong{
   position:absolute;
-  bottom:2rem;
+  bottom:0rem;
   width:100%;
   z-index: 2;
 }
