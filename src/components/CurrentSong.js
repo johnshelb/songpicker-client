@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-export default function CurrentSong({allSongs, instrument}){
+export default function CurrentSong({allSongs, instrument, setDisplay}){
   const [title,newTitle] = useState('')
+  
   useEffect(()=>{
     newTitle("What now...")
   }, [instrument])
+
   async function chooseSong(){
     const instrumentSongs = allSongs.filter(song=>song.instrument === instrument );
     const eligibleSongs = instrumentSongs.filter(song=>song.count < 4)
@@ -13,7 +15,6 @@ export default function CurrentSong({allSongs, instrument}){
       let index = Math.floor(Math.random() * eligibleSongs.length)
       let ti = eligibleSongs[index].name +" (" + (eligibleSongs[index].count + 1) +")"
       eligibleSongs[index].count+=1;
-      console.log("about to fetch")
       fetch(`https://songpicker-server.onrender.com/record/update/${eligibleSongs[index]._id}`,{
         method:'POST',
         body:JSON.stringify(eligibleSongs[index]),
@@ -36,6 +37,7 @@ export default function CurrentSong({allSongs, instrument}){
       newTitle('resetting...')
       chooseSong()
     }
+    setDisplay(false);
   }
   return(
     <>

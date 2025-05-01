@@ -68,7 +68,7 @@ export default function App(){
 
   return(
    loggedIn ? (<>
-      <CurrentSong allSongs = {allSongs} instrument={instrument} />
+      <CurrentSong allSongs = {allSongs} instrument={instrument} setDisplay={setDisplay}/>
       <AddSong setDisplay={setDisplay} setAllSongs = {setAllSongs} setNumSongs = {setNumSongs} instrument = {instrument}/>
       <button id ="logout" onClick = {()=>{localStorage.removeItem('songpicker'); setLoggedIn(false)}}>Log Out</button>
       <FullList allSongs = {allSongs} setAllSongs = {setAllSongs} display = {display} setDisplay={setDisplay} numSongs = {numSongs} setNumSongs = {setNumSongs} instrument={instrument} changeInstrument={changeInstrument}/>

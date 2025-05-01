@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 export default function FullList({allSongs, setAllSongs, display, setDisplay, numSongs, setNumSongs, instrument, changeInstrument}){
     useEffect(()=>{
-      console.log("Fetching all songs")
      fetch(`https://songpicker-server.onrender.com/record?owner=${localStorage.getItem('songpicker')}`)
      //USE FOR TESTING ON LOCALHOST
     //fetch(`http://localhost:5000/record?owner=${localStorage.getItem('songpicker')}`)
@@ -17,7 +16,7 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
           setAllSongs(result);
         })
           .catch(error => console.error("Fetch error:", error));
-    },[numSongs, setAllSongs])
+    },[numSongs, setAllSongs])  //I DON'T THINK SETALLSONGS IS NEEDED HERE
 
   async function deleteSong(i){
     await fetch(`https://songpicker-server.onrender.com/record/${instrumentSongs[i]._id}`,{
