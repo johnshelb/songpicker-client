@@ -31,7 +31,18 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
   instrumentSongs.sort((a,b)=>{
     return a.name.trim().toLowerCase() < b.name.trim().toLowerCase() ? -1 :a.name.trim().toLowerCase()>b.name.trim().toLowerCase()? 1 : 0;
   })
-  const nl = instrumentSongs.map((n,i)=><li key ={i}>{`${n.name} : ${n.count}`}
+
+
+  const nl = instrumentSongs.map((n,i)=><li key ={i}>
+    <a
+  href={`https://www.google.com/search?q=${encodeURIComponent(n.name)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  `${n.name}`
+</a>
+    
+    {/* {`${n.name} : ${n.count}`} */}
     <button className = 'delete' onClick = {()=>deleteSong(i)}>Delete</button></li>)
   
   return(

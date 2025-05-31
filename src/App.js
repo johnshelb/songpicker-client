@@ -1,3 +1,5 @@
+//CURRENTLY DEPLOYED ON NETLIFY.  CHANGES PUSHED TO GITHUB WILL UPDATE NETLIFY SITE
+
 import React, {useState, useEffect} from 'react';
 import CurrentSong from './components/CurrentSong';
 import AddSong from './components/AddSong';
