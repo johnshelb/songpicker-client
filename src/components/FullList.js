@@ -35,7 +35,7 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
 
   const nl = instrumentSongs.map((n,i)=><li key ={i}>
     <a
-  href={`https://www.google.com/search?q=${encodeURIComponent(n.name)}`}
+  href={`https://www.google.com/search?q=${encodeURIComponent(n.name + " lyrics")}`}
   target="_blank"
   rel="noopener noreferrer"
 >
