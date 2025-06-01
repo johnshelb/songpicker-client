@@ -29,9 +29,7 @@
   width:100%;
   top:4em;
 }
-#title{
-  color:red;
-}
+
 li{
   background-color: bisque;
   margin: 5px;
@@ -284,7 +282,7 @@ ul{
   }
   #title{
     margin:.5em auto;
-    color:red;
+    color:white;
     font-size: 2em;
     background:none;
   }
