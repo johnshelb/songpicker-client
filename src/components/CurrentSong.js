@@ -45,7 +45,7 @@ export default function CurrentSong({allSongs, instrument, setDisplay}){
         <button id='getSong' onClick = { chooseSong }>What Song to Play Next?</button>
         <h1 id="title">
           {/* only include link if a song has been selected */}
-          {title !== "What now..."?
+          {title !== "What now..."  && title !== `No songs in the database for ${instrument}`?
               <a
                 href={`https://www.google.com/search?q=${encodeURIComponent(title + " lyrics")}`}
                 target="_blank"
