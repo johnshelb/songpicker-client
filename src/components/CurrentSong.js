@@ -43,7 +43,15 @@ export default function CurrentSong({allSongs, instrument, setDisplay}){
     <>
       <div className = 'next'>
         <button id='getSong' onClick = { chooseSong }>What Song to Play Next?</button>
-        <h1 id="title">{title}</h1>
+        <h1 id="title">
+        <a
+  href={`https://www.google.com/search?q=${encodeURIComponent(title + " lyrics")}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {title}
+</a>
+        </h1>
       </div>
     </>
 
