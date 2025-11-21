@@ -39,7 +39,8 @@ export default function FullList({allSongs, setAllSongs, display, setDisplay, nu
   target="_blank"
   rel="noopener noreferrer"
 >
-  {n.name}
+  {n.name} : {Number(n.count) || 0}
+
 </a>
     
     {/* {`${n.name} : ${n.count}`} */}
