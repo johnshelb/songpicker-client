@@ -24,8 +24,12 @@ export default function App(){
   }
   function logIn(e){
     e.preventDefault();
-    fetch(`https://songpicker-server.onrender.com/logIn?username=${username}`)
-    .then(response => {
+    //ADDED IN FOR DEBUGGING
+    console.log("about to call fetch from front-end to back end")
+    // fetch(`https://songpicker-server.onrender.com/logIn?username=${username}`)
+    fetch(`https://songpicker-server.onrender.com/record/logIn?username=${username}`)
+
+      .then(response => {
       if (response.ok) {
         localStorage.setItem('songpicker', username);
         setLoggedIn(true);
